@@ -1,0 +1,14 @@
+<div class="product-grid">
+  <div class="product-card" *ngFor="let product of products">
+    <h3>{{ product.name }}</h3>
+    <p>{{ product.description }}</p>
+    <p>Цена: {{ product.price }} KZT</p>
+    <p>Рейтинг: {{ product.rating }}</p>
+    <img [src]="product.image" alt="{{ product.name }}">
+    <div class="share-buttons">
+      <button (click)="shareWhatsApp(product.link)">Share WhatsApp</button>
+      <button (click)="shareTelegram(product.link, product.name)">Share Telegram</button>
+    </div>
+    <a [href]="product.link" target="_blank">Перейти на Kaspi.kz</a>
+  </div>
+</div>
