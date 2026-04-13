@@ -1,0 +1,23 @@
+<h2>Skin Profile</h2>
+
+<form>
+
+  <label>Skin Type:</label>
+  <input [(ngModel)]="skinType" name="skinType" type="text">
+  <br><br>
+
+  <label>Skin Problem:</label>
+  <input [(ngModel)]="skinProblem" name="skinProblem" type="text">
+  <br><br>
+
+  <label>Budget:</label>
+  <input [(ngModel)]="budget" name="budget" type="number">
+  <br><br>
+
+  <button type="button" (click)="submitProfile()">
+  Get Recommendations
+  </button>
+
+</form>
+
+<hr>

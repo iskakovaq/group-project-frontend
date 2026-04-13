@@ -1,0 +1,22 @@
+<h2>Login SkinMatch</h2>
+
+<form>
+
+  <label>Email:</label>
+  <input [(ngModel)]="email" name="email" type="text">
+
+  <br><br>
+
+  <label>Password:</label>
+  <input [(ngModel)]="password" name="password" type="password">
+
+  <br><br>
+
+  <button type="button" (click)="login()">Login</button>
+
+</form>
+
+<hr>
+
+<p>Email: {{ email }}</p>
+<p>Password: {{ password }}</p>

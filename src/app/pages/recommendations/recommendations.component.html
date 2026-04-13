@@ -1,0 +1,31 @@
+<h2>✨ SkinMatch AI Recommendations</h2>
+
+<p style="text-align:center;">
+  Skin: <b>{{ profile.skinType }}</b> |
+  Problem: <b>{{ profile.skinProblem }}</b> |
+  Budget: <b>{{ profile.budget }}$</b>
+</p>
+
+<div class="grid">
+  @for (item of recommendations; track item.id) {
+    <div class="card" (click)="selectProduct(item)" style="cursor: pointer;">
+      <img [src]="item.image" alt="Product image">
+      <h4>{{ item.name }}</h4>
+      <p style="color:gray">{{ item.type }}</p>
+    </div>
+  }
+</div>
+
+<!-- Modal Window for Product Details -->
+<div *ngIf="selectedProduct" class="modal-overlay" (click)="selectedProduct = null">
+  <div class="modal-content" (click)="$event.stopPropagation()">
+    <h2>{{ selectedProduct.name }}</h2>
+    <img [src]="selectedProduct.image" style="width:200px; border-radius:12px;">
+    <p><b>Type:</b> {{ selectedProduct.type }}</p>
+    <p><b>Skin:</b> {{ selectedProduct.skin }}</p>
+    <p style="color:gray; margin-top:10px;">
+      {{ getReason(selectedProduct) }}
+    </p>
+    <button (click)="selectedProduct = null" style="margin-top:20px; padding:10px; border-radius:5px; background-color: #ff5e5b; color:white;">Close</button>
+  </div>
+</div>
